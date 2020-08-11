@@ -3,12 +3,15 @@ import config
 import json
 import requests
 
+from xbmcaddon import Addon
+
 from aussieaddonscommon.exceptions import AussieAddonsException
 from aussieaddonscommon import utils
 
 
+ADDON_ID = Addon().getAddonInfo('id')
+
 cache = classes.CacheObj()
-ADDON_ID = 'plugin.video.catchuptv.au.nine'
 
 def fetch_bc_url(url, headers={}):
     """
