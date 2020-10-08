@@ -124,7 +124,7 @@ def make_series_list(url):
         if 'genre' in params:
             series_slug_list = comm.list_series_by_genre(params['genre'])
             series_list = [s for s in series_list
-                            if s.series_slug in series_slug_list]
+                           if s.series_slug in series_slug_list]
         listing = []
         for s in series_list:
             li = create_listitem(
