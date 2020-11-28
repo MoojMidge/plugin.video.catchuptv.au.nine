@@ -60,10 +60,10 @@ def list_series():
                 s.series_slug = season['partOfSeries'].get('slug')
                 s.fanart = show['image']['sizes'].get('w1280')
                 s.thumb = season['image']['sizes'].get('w480')
-                s.genre = season['genre'].get('name')
+                s.genre = season['genre'].get('name', '')
                 s.genre_slug = season['genre'].get('slug')
                 s.title = s.get_title()
-                s.desc = season.get('description')
+                s.desc = season.get('description', '')
                 listing.append(s)
 
     cache.getData(name=ADDON_ID, url=config.TVSERIES_URL, data=listing)
